@@ -11,10 +11,26 @@ function createChart(containerId) {
         height: container.clientHeight,
         layout: { backgroundColor: '#ffffff', textColor: '#000' },
         rightPriceScale: { visible: true },
-        timeScale: { timeVisible: true, secondsVisible: false }
+        timeScale: { timeVisible: true, secondsVisible: false },
+        handleScroll: {
+            mouseWheel: true,
+            pressedMouseMove: true,
+            horzTouchDrag: true
+        },
+        handleScale: {
+            axisPressedMouseMove: true,
+            axisDoubleClickReset: true,
+            pinch: true
+        }
     });
     window.addEventListener('resize', () => {
         chart.applyOptions({ width: container.clientWidth, height: container.clientHeight });
+    });
+    // adapt orientation
+    window.addEventListener('orientationchange', () => {
+        setTimeout(() => {
+            chart.applyOptions({ width: container.clientWidth, height: container.clientHeight });
+        }, 200);
     });
     return chart;
 }
@@ -88,7 +104,15 @@ function renderPriceChart(containerId, symbol, data, signal) {
     legend.style.background = 'rgba(255,255,255,0.8)';
     legend.style.padding = '2px 5px';
     legend.textContent = `${symbol} ${data[data.length-1].close}`;
-    document.getElementById(containerId).appendChild(legend);
+    const container = document.getElementById(containerId);
+    if (window.innerWidth < 576) {
+        // hide legend until tapped on mobile
+        legend.style.display = 'none';
+        container.addEventListener('click', () => {
+            legend.style.display = legend.style.display === 'none' ? 'block' : 'none';
+        });
+    }
+    container.appendChild(legend);
 }
 
 function renderIndicatorChart(containerId, symbol, indicator, data) {

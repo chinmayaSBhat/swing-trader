@@ -100,6 +100,66 @@ class SwingTraderApp {
         }
     }
 
+    attachMobileHelpers() {
+        // collapsible card headers
+        document.querySelectorAll('.card.mobile-collapsible .card-header').forEach(h => {
+            h.addEventListener('click', () => {
+                const card = h.closest('.card');
+                if (card) card.classList.toggle('collapsed');
+            });
+        });
+
+        // bottom nav active state
+        const path = window.location.pathname;
+        document.querySelectorAll('.mobile-bottom-nav .nav-link').forEach(a => {
+            if (a.getAttribute('href') === path || path.endsWith(a.getAttribute('href'))) {
+                a.classList.add('active');
+            }
+        });
+
+        // swipe between main pages
+        let startX = 0;
+        document.body.addEventListener('touchstart', e => {
+            if (e.touches.length === 1) startX = e.touches[0].clientX;
+        });
+        document.body.addEventListener('touchend', e => {
+            const dx = e.changedTouches[0].clientX - startX;
+            if (Math.abs(dx) < 50) return;
+            const order = ['/index.html', '/pages/watchlist.html', '/pages/signals.html', '/pages/settings.html'];
+            const curr = order.findIndex(o => path.endsWith(o));
+            if (curr === -1) return;
+            if (dx < 0 && curr < order.length - 1) {
+                window.location.href = order[curr + 1];
+            } else if (dx > 0 && curr > 0) {
+                window.location.href = order[curr - 1];
+            }
+        });
+
+        // pull-to-refresh on dashboard
+        if (path.endsWith('index.html') || path === '/' || path === '') {
+            let touchStartY = 0;
+            let refreshing = false;
+            window.addEventListener('touchstart', e => {
+                if (window.scrollY === 0 && e.touches.length === 1) touchStartY = e.touches[0].clientY;
+            });
+            window.addEventListener('touchmove', e => {
+                if (window.scrollY === 0 && !refreshing) {
+                    const dy = e.touches[0].clientY - touchStartY;
+                    if (dy > 80) {
+                        refreshing = true;
+                        this.refreshMarketData().finally(() => { refreshing = false; });
+                    }
+                }
+            });
+        }
+    }
+
+    async initEventListeners() {
+        // existing handlers...
+        // call mobile helpers
+        this.attachMobileHelpers();
+    }
+
     setLoading(isLoading) {
         const btn = document.getElementById('refreshBtn');
         if (btn) btn.disabled = !!isLoading;

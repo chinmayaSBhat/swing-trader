@@ -98,8 +98,22 @@ function displayResults(signals) {
     signals.sort((a,b)=>b.confidence - a.confidence);
     signals.slice(0,100).forEach(s => {
         const row = document.createElement('tr');
-        row.innerHTML = `<td>${s.symbol}</td><td>${s.strategy}</td><td>${formatIndianCurrency(s.entry)}</td><td>${formatIndianCurrency(s.stopLoss)}</td><td>${formatIndianCurrency(s.target)}</td><td>${s.riskReward}</td><td>${s.confidence}%</td><td><button class="btn btn-sm btn-success" data-symbol="${s.symbol}">Add</button></td>`;
+        row.classList.add('row-swipe-action');
+        row.innerHTML = `<td>${s.symbol}</td><td>${s.strategy}</td><td class="col-hidden-xs">${formatIndianCurrency(s.entry)}</td><td class="col-hidden-xs">${formatIndianCurrency(s.stopLoss)}</td><td class="col-hidden-xs">${formatIndianCurrency(s.target)}</td><td class="col-hidden-xs">${s.riskReward}</td><td class="col-hidden-xs">${s.confidence}%</td><td><button class="btn btn-sm btn-success" data-symbol="${s.symbol}">Add</button></td>`;
         tbody.appendChild(row);
+
+        // swipe gesture for add
+        let startX = 0;
+        row.addEventListener('touchstart', e => {
+            if (e.touches.length === 1) startX = e.touches[0].clientX;
+        });
+        row.addEventListener('touchend', e => {
+            const dx = e.changedTouches[0].clientX - startX;
+            if (dx > 60) {
+                const btn = row.querySelector('button');
+                if (btn) btn.click();
+            }
+        });
     });
     // attach click listener for rows to show detail section
     tbody.querySelectorAll('tr').forEach(r => {
