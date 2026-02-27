@@ -3,4 +3,94 @@ body {
     background-color: #f8f9fa;
 }
 
-/* additional styling can be added here */
+/* bottom navigation for mobile */
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  display: none;
+  z-index: 1030;
+}
+
+@media (max-width: 767.98px) {
+  .mobile-bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+  }
+  body {
+    padding-bottom: 3.5rem; /* make room for bottom nav */
+  }
+}
+
+/* hide less important columns on very small screens */
+@media (max-width: 575.98px) {
+  .col-hidden-xs {
+    display: none !important;
+  }
+}
+
+/* make card sections collapsible on small screens */
+@media (max-width: 767.98px) {
+  .card.mobile-collapsible .card-header {
+    cursor: pointer;
+    position: relative;
+  }
+  .card.mobile-collapsible .card-header::after {
+    content: '\25BC';
+    position: absolute;
+    right: 1rem;
+    transition: transform 0.3s ease;
+  }
+  .card.mobile-collapsible.collapsed .card-header::after {
+    transform: rotate(-90deg);
+  }
+  .card.mobile-collapsible.collapsed .card-body {
+    display: none;
+  }
+}
+
+/* enlarge touch targets globally */
+.btn, .form-control {
+  min-height: 44px;
+}
+
+/* show simplified legend overlay by default; hidden on mobile until tapped */
+.chart-legend {
+  font-size: 0.8rem;
+}
+
+/* swipe action overlay (optional) */
+.row-swipe-action {
+  position: relative;
+  overflow: hidden;
+}
+.row-swipe-action .swipe-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  background: rgba(220,53,69,0.9);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: -100px;
+  transition: right 0.3s ease;
+}
+.row-swipe-action.swiped-left .swipe-overlay {
+  right: 0;
+}
+
+/* number inputs should bring numeric keyboard */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

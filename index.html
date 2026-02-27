@@ -75,7 +75,7 @@
             </div>
 
             <!-- Market Overview Card (expanded) -->
-            <div class="card mb-3">
+            <div class="card mb-3 mobile-collapsible collapsed">
                 <div class="card-header">
                     Market Overview
                 </div>
@@ -111,7 +111,7 @@
             <!-- Today's Signals and Watchlist Summary -->
             <div class="row g-3">
                 <div class="col-md-8">
-                    <div class="card">
+                    <div class="card mobile-collapsible collapsed">
                         <div class="card-header">
                             Today's Signals
                         </div>
@@ -122,11 +122,11 @@
                                         <tr>
                                             <th>Stock</th>
                                             <th>Strategy</th>
-                                            <th>Entry</th>
-                                            <th>Stop Loss</th>
-                                            <th>Target</th>
-                                            <th>R:R</th>
-                                            <th>Confidence</th>
+                                            <th class="col-hidden-xs">Entry</th>
+                                            <th class="col-hidden-xs">Stop Loss</th>
+                                            <th class="col-hidden-xs">Target</th>
+                                            <th class="col-hidden-xs">R:R</th>
+                                            <th class="col-hidden-xs">Confidence</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -143,7 +143,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card">
+                    <div class="card mobile-collapsible collapsed">
                         <div class="card-header">
                             Watchlist Summary
                         </div>
@@ -164,7 +164,7 @@
             <!-- News and Breadth -->
             <div class="row g-3 mt-3">
                 <div class="col-md-8">
-                    <div class="card">
+                    <div class="card mobile-collapsible collapsed">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             News Feed
                             <div class="btn-group btn-group-sm" role="group" aria-label="News filter">
@@ -183,7 +183,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-center">
+                    <div class="card text-center mobile-collapsible collapsed">
                         <div class="card-header">Market Breadth</div>
                         <div class="card-body">
                             <h3 id="breadthSentiment">--</h3>
@@ -199,6 +199,14 @@
 <footer class="bg-light text-center py-3 mt-4">
     <small>Not Financial Advice</small>
 </footer>
+
+<!-- mobile bottom navigation -->
+<nav class="mobile-bottom-nav">
+  <a href="/index.html" class="nav-link">🏠</a>
+  <a href="/pages/watchlist.html" class="nav-link">⭐</a>
+  <a href="/pages/signals.html" class="nav-link">📊</a>
+  <a href="/pages/settings.html" class="nav-link">⚙️</a>
+</nav>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
 <!-- Lightweight Charts CDN -->

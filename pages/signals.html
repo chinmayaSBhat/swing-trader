@@ -38,7 +38,7 @@
     <h1>Signal Discovery</h1>
 
     <!-- Filters Section -->
-    <div class="card mb-4">
+    <div class="card mb-4 mobile-collapsible collapsed">
         <div class="card-header">Filters</div>
         <div class="card-body">
             <form id="filterForm" class="row g-3">
@@ -88,7 +88,7 @@
     </div>
 
     <!-- Scan Settings -->
-    <div class="card mb-4">
+    <div class="card mb-4 mobile-collapsible collapsed">
         <div class="card-header">Scan Settings</div>
         <div class="card-body">
             <div class="row g-3 align-items-center">
@@ -121,11 +121,11 @@
                 <tr>
                     <th>Stock</th>
                     <th>Strategy</th>
-                    <th>Entry</th>
-                    <th>Stop</th>
-                    <th>Target</th>
-                    <th>R:R</th>
-                    <th>Confidence</th>
+                    <th class="col-hidden-xs">Entry</th>
+                    <th class="col-hidden-xs">Stop</th>
+                    <th class="col-hidden-xs">Target</th>
+                    <th class="col-hidden-xs">R:R</th>
+                    <th class="col-hidden-xs">Confidence</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -151,7 +151,7 @@
     </template>
 
     <!-- Historical Performance Section -->
-    <div class="card mb-4">
+    <div class="card mb-4 mobile-collapsible collapsed">
         <div class="card-header">Historical Performance</div>
         <div class="card-body">
             <p>Win rate: <span id="histWinRate">--</span></p>
@@ -168,6 +168,14 @@
     </div>
 
 </div>
+
+<!-- mobile bottom navigation -->
+<nav class="mobile-bottom-nav">
+  <a href="/index.html" class="nav-link">🏠</a>
+  <a href="/pages/watchlist.html" class="nav-link">⭐</a>
+  <a href="/pages/signals.html" class="nav-link">📊</a>
+  <a href="/pages/settings.html" class="nav-link">⚙️</a>
+</nav>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>

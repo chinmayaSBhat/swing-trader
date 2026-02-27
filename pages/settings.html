@@ -38,7 +38,7 @@
     <h1>Settings</h1>
 
     <!-- Alert Preferences -->
-    <div class="card mb-4">
+    <div class="card mb-4 mobile-collapsible collapsed">
         <div class="card-header">Alert Preferences</div>
         <div class="card-body">
             <form id="alertPrefsForm" class="row g-3">
@@ -80,13 +80,13 @@
     </div>
 
     <!-- Trading Preferences -->
-    <div class="card mb-4">
+    <div class="card mb-4 mobile-collapsible collapsed">
         <div class="card-header">Trading Preferences</div>
         <div class="card-body">
             <form id="tradingPrefsForm" class="row g-3">
                 <div class="col-md-3">
                     <label class="form-label">Capital Amount (₹)</label>
-                    <input type="number" class="form-control" id="prefCapital" placeholder="100000">
+                    <input type="number" inputmode="numeric" class="form-control" id="prefCapital" placeholder="100000">
                 </div>
                 <div class="col-md-3">
                     <label class="form-label">Risk per Trade</label>
@@ -130,7 +130,7 @@
     </div>
 
     <!-- Data Management -->
-    <div class="card mb-4">
+    <div class="card mb-4 mobile-collapsible collapsed">
         <div class="card-header">Data Management</div>
         <div class="card-body">
             <button class="btn btn-warning" id="clearCacheBtn">Clear cache</button>
@@ -140,7 +140,7 @@
     </div>
 
     <!-- Display Settings -->
-    <div class="card mb-4">
+    <div class="card mb-4 mobile-collapsible collapsed">
         <div class="card-header">Display Settings</div>
         <div class="card-body">
             <div class="form-check form-switch mb-2">
@@ -167,7 +167,7 @@
     </div>
 
     <!-- About & Disclaimer -->
-    <div class="card mb-4">
+    <div class="card mb-4 mobile-collapsible collapsed">
         <div class="card-header">About & Disclaimer</div>
         <div class="card-body">
             <p>App version: 1.0.0</p>
@@ -176,6 +176,14 @@
         </div>
     </div>
 </div>
+
+<!-- mobile bottom navigation -->
+<nav class="mobile-bottom-nav">
+  <a href="/index.html" class="nav-link">🏠</a>
+  <a href="/pages/watchlist.html" class="nav-link">⭐</a>
+  <a href="/pages/signals.html" class="nav-link">📊</a>
+  <a href="/pages/settings.html" class="nav-link">⚙️</a>
+</nav>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
