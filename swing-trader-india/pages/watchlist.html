@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watchlist - Swing Trader India</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../index.html">Swing Trader India</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="watchlist.html">Watchlist</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="signals.html">Signals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="settings.html">Settings</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-4">
+    <h1>Watchlist</h1>
+    <p>Manage your stock watchlist here.</p>
+
+    <!-- add stock section -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <form id="addStockForm" class="row gy-2 gx-3 align-items-center">
+                <div class="col-auto">
+                    <input list="stockList" class="form-control" id="stockInput" placeholder="Search symbol or name">
+                    <datalist id="stockList"></datalist>
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">Add to Watchlist</button>
+                </div>
+                <div class="col-auto">
+                    <span id="watchlistCount">0 stocks</span>
+                </div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-secondary" id="generateSignalsBtn">Generate Signals</button>
+                </div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-outline-secondary" id="exportBtn">Export</button>
+                    <input type="file" id="importInput" accept="application/json" hidden>
+                    <button type="button" class="btn btn-outline-secondary" id="importBtn">Import</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- watchlist table -->
+    <div class="table-responsive mb-4">
+        <table class="table table-striped table-hover" id="watchlistTable">
+            <thead class="table-light">
+                <tr>
+                    <th>Stock Name</th>
+                    <th>Symbol</th>
+                    <th>Price</th>
+                    <th>Change%</th>
+                    <th>RSI</th>
+                    <th>Signal</th>
+                    <th>Chart</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td colspan="8" class="text-center py-3"><div class="spinner-border" role="status"></div></td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- detail modal -->
+<div class="modal fade" id="stockDetailModal" tabindex="-1" aria-labelledby="stockDetailLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="stockDetailLabel">Stock Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="stockDetailContent">
+          <!-- dynamic content inserted by JS -->
+          <p>Loading...</p>
+        </div>
+        <!-- chart container rendered by charts.js functions -->
+        <div id="detailChart" style="height:300px; width:100%;"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+<script src="../assets/js/app.js"></script>
+<script type="module" src="../assets/js/watchlist.js"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signals - Swing Trader India</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../index.html">Swing Trader India</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="watchlist.html">Watchlist</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="signals.html">Signals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="settings.html">Settings</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-4">
+    <h1>Signal Discovery</h1>
+
+    <!-- Filters Section -->
+    <div class="card mb-4">
+        <div class="card-header">Filters</div>
+        <div class="card-body">
+            <form id="filterForm" class="row g-3">
+                <div class="col-md-3">
+                    <label class="form-label">Strategy</label>
+                    <select class="form-select" id="filterStrategy">
+                        <option selected>All</option>
+                        <option>Pullback</option>
+                        <option>Breakout</option>
+                        <option>Support Bounce</option>
+                        <option>MA Crossover</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Sector</label>
+                    <select class="form-select" id="filterSector">
+                        <option selected>All</option>
+                        <option>IT</option>
+                        <option>Banking</option>
+                        <option>Pharma</option>
+                        <option>Auto</option>
+                        <option>FMCG</option>
+                        <option>Energy</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Risk Level</label>
+                    <select class="form-select" id="filterRisk">
+                        <option selected>All</option>
+                        <option>Low</option>
+                        <option>Medium</option>
+                        <option>High</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Min R:R Ratio</label>
+                    <input type="range" class="form-range" min="1" max="5" step="0.1" id="filterRR">
+                    <span id="filterRRValue">1:1</span>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Min Confidence</label>
+                    <input type="range" class="form-range" min="50" max="100" step="5" id="filterConf">
+                    <span id="filterConfValue">50%</span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scan Settings -->
+    <div class="card mb-4">
+        <div class="card-header">Scan Settings</div>
+        <div class="card-body">
+            <div class="row g-3 align-items-center">
+                <div class="col-md-4">
+                    <label class="form-label">Stock Universe</label>
+                    <select class="form-select" id="scanUniverse">
+                        <option selected>NIFTY 50</option>
+                        <option>NIFTY 100</option>
+                        <option>NIFTY 500</option>
+                        <option>Watchlist Only</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-primary" id="runScanBtn">Run Full Scan</button>
+                </div>
+                <div class="col-md-8 mt-2">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" id="scanProgress"></div>
+                    </div>
+                    <small id="scanETA">ETA: --</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Table -->
+    <div class="table-responsive mb-4">
+        <table class="table table-hover" id="signalsResultsTable">
+            <thead class="table-light">
+                <tr>
+                    <th>Stock</th>
+                    <th>Strategy</th>
+                    <th>Entry</th>
+                    <th>Stop</th>
+                    <th>Target</th>
+                    <th>R:R</th>
+                    <th>Confidence</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td colspan="8" class="text-center py-3"><div class="spinner-border" role="status"></div></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Hidden row template for details -->
+    <template id="signalDetailTemplate">
+        <tr class="signal-detail-row">
+            <td colspan="8">
+                <div class="p-3 bg-light">
+                    <p><strong>Why generated:</strong> <span class="detail-why"></span></p>
+                    <!-- chart container updated to use Lightweight Charts -->
+                    <div class="detail-chart" style="height:200px; width:100%;"></div>
+                    <p><strong>Historical win rate:</strong> <span class="detail-winrate"></span></p>
+                    <p><strong>Risk suggestions:</strong> <span class="detail-risk"></span></p>
+                </div>
+            </td>
+        </tr>
+    </template>
+
+    <!-- Historical Performance Section -->
+    <div class="card mb-4">
+        <div class="card-header">Historical Performance</div>
+        <div class="card-body">
+            <p>Win rate: <span id="histWinRate">--</span></p>
+            <p>Average R:R: <span id="histRR">--</span></p>
+            <div class="table-responsive">
+                <table class="table table-sm" id="histTable">
+                    <thead>
+                        <tr><th>Date</th><th>Stock</th><th>Strategy</th><th>Outcome</th><th>R:R</th></tr>
+                    </thead>
+                    <tbody><tr><td colspan="5" class="text-center py-3">No data</td></tr></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+<script src="../assets/js/app.js"></script>
+<script type="module" src="../assets/js/signalsPage.js"></script>
+</body>
+</html>

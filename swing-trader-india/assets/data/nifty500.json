@@ -1,0 +1,604 @@
+{
+  "stocks": [
+    {
+      "symbol": "RELIANCE.NS",
+      "name": "Reliance Industries",
+      "sector": "Energy",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "TCS.NS",
+      "name": "Tata Consultancy Services",
+      "sector": "IT",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "INFY.NS",
+      "name": "Infosys",
+      "sector": "IT",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "HDFCBANK.NS",
+      "name": "HDFC Bank",
+      "sector": "Finance",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "ICICIBANK.NS",
+      "name": "ICICI Bank",
+      "sector": "Finance",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "HINDUNILVR.NS",
+      "name": "Hindustan Unilever",
+      "sector": "FMCG",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "ITC.NS",
+      "name": "ITC",
+      "sector": "FMCG",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "SBIN.NS",
+      "name": "State Bank of India",
+      "sector": "Finance",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "BHARTIARTL.NS",
+      "name": "Bharti Airtel",
+      "sector": "Telecom",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "KOTAKBANK.NS",
+      "name": "Kotak Mahindra Bank",
+      "sector": "Finance",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "LT.NS",
+      "name": "Larsen & Toubro",
+      "sector": "Engineering",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "AXISBANK.NS",
+      "name": "Axis Bank",
+      "sector": "Finance",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "ASIANPAINT.NS",
+      "name": "Asian Paints",
+      "sector": "Chemicals",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "MARUTI.NS",
+      "name": "Maruti Suzuki",
+      "sector": "Automobile",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "BAJFINANCE.NS",
+      "name": "Bajaj Finance",
+      "sector": "Finance",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "HCLTECH.NS",
+      "name": "HCL Technologies",
+      "sector": "IT",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "TITAN.NS",
+      "name": "Titan Company",
+      "sector": "Consumer Goods",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "SUNPHARMA.NS",
+      "name": "Sun Pharma",
+      "sector": "Pharmaceuticals",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "ULTRACEMCO.NS",
+      "name": "UltraTech Cement",
+      "sector": "Cement",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "NESTLEIND.NS",
+      "name": "Nestle India",
+      "sector": "FMCG",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "WIPRO.NS",
+      "name": "Wipro",
+      "sector": "IT",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "TECHM.NS",
+      "name": "Tech Mahindra",
+      "sector": "IT",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "POWERGRID.NS",
+      "name": "Power Grid Corporation",
+      "sector": "Utilities",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "NTPC.NS",
+      "name": "NTPC",
+      "sector": "Utilities",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "ONGC.NS",
+      "name": "Oil and Natural Gas Corporation",
+      "sector": "Energy",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "M&M.NS",
+      "name": "Mahindra & Mahindra",
+      "sector": "Automobile",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "TATAMOTORS.NS",
+      "name": "Tata Motors",
+      "sector": "Automobile",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "TATASTEEL.NS",
+      "name": "Tata Steel",
+      "sector": "Steel",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "JSWSTEEL.NS",
+      "name": "JSW Steel",
+      "sector": "Steel",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "ADANIPORTS.NS",
+      "name": "Adani Ports",
+      "sector": "Infrastructure",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "INDUSINDBK.NS",
+      "name": "IndusInd Bank",
+      "sector": "Finance",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "BAJAJFINSV.NS",
+      "name": "Bajaj Finserv",
+      "sector": "Finance",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "DRREDDY.NS",
+      "name": "Dr. Reddy's Laboratories",
+      "sector": "Pharmaceuticals",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "CIPLA.NS",
+      "name": "Cipla",
+      "sector": "Pharmaceuticals",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "EICHERMOT.NS",
+      "name": "Eicher Motors",
+      "sector": "Automobile",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "HINDALCO.NS",
+      "name": "Hindalco Industries",
+      "sector": "Metals",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "GRASIM.NS",
+      "name": "Grasim Industries",
+      "sector": "Chemicals",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "COALINDIA.NS",
+      "name": "Coal India",
+      "sector": "Energy",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "BPCL.NS",
+      "name": "Bharat Petroleum",
+      "sector": "Energy",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "IOC.NS",
+      "name": "Indian Oil Corporation",
+      "sector": "Energy",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "DIVISLAB.NS",
+      "name": "Divi's Laboratories",
+      "sector": "Pharmaceuticals",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "HEROMOTOCO.NS",
+      "name": "Hero MotoCorp",
+      "sector": "Automobile",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "BRITANNIA.NS",
+      "name": "Britannia Industries",
+      "sector": "FMCG",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "SHREECEM.NS",
+      "name": "Shree Cement",
+      "sector": "Cement",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "UPL.NS",
+      "name": "UPL Limited",
+      "sector": "Chemicals",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "ADANIENT.NS",
+      "name": "Adani Enterprises",
+      "sector": "Conglomerate",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "APOLLOHOSP.NS",
+      "name": "Apollo Hospitals",
+      "sector": "Healthcare",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "TATACONSUM.NS",
+      "name": "Tata Consumer Products",
+      "sector": "Consumer Goods",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "SBILIFE.NS",
+      "name": "SBI Life Insurance",
+      "sector": "Insurance",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "BAJAJ-AUTO.NS",
+      "name": "Bajaj Auto",
+      "sector": "Automobile",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK51.NS",
+      "name": "Placeholder Stock 51",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK52.NS",
+      "name": "Placeholder Stock 52",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK53.NS",
+      "name": "Placeholder Stock 53",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK54.NS",
+      "name": "Placeholder Stock 54",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK55.NS",
+      "name": "Placeholder Stock 55",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK56.NS",
+      "name": "Placeholder Stock 56",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK57.NS",
+      "name": "Placeholder Stock 57",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK58.NS",
+      "name": "Placeholder Stock 58",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK59.NS",
+      "name": "Placeholder Stock 59",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK60.NS",
+      "name": "Placeholder Stock 60",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK61.NS",
+      "name": "Placeholder Stock 61",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK62.NS",
+      "name": "Placeholder Stock 62",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK63.NS",
+      "name": "Placeholder Stock 63",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK64.NS",
+      "name": "Placeholder Stock64",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK65.NS",
+      "name": "Placeholder Stock 65",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK66.NS",
+      "name": "Placeholder Stock 66",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK67.NS",
+      "name": "Placeholder Stock 67",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK68.NS",
+      "name": "Placeholder Stock 68",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK69.NS",
+      "name": "Placeholder Stock 69",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK70.NS",
+      "name": "Placeholder Stock 70",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK71.NS",
+      "name": "Placeholder Stock 71",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK72.NS",
+      "name": "Placeholder Stock 72",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK73.NS",
+      "name": "Placeholder Stock 73",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK74.NS",
+      "name": "Placeholder Stock 74",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK75.NS",
+      "name": "Placeholder Stock 75",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK76.NS",
+      "name": "Placeholder Stock 76",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK77.NS",
+      "name": "Placeholder Stock 77",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK78.NS",
+      "name": "Placeholder Stock 78",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK79.NS",
+      "name": "Placeholder Stock 79",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK80.NS",
+      "name": "Placeholder Stock 80",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK81.NS",
+      "name": "Placeholder Stock 81",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK82.NS",
+      "name": "Placeholder Stock 82",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK83.NS",
+      "name": "Placeholder Stock 83",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK84.NS",
+      "name": "Placeholder Stock 84",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK85.NS",
+      "name": "Placeholder Stock 85",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK86.NS",
+      "name": "Placeholder Stock 86",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK87.NS",
+      "name": "Placeholder Stock 87",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK88.NS",
+      "name": "Placeholder Stock 88",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK89.NS",
+      "name": "Placeholder Stock 89",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK90.NS",
+      "name": "Placeholder Stock 90",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK91.NS",
+      "name": "Placeholder Stock 91",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK92.NS",
+      "name": "Placeholder Stock 92",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK93.NS",
+      "name": "Placeholder Stock 93",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK94.NS",
+      "name": "Placeholder Stock 94",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK95.NS",
+      "name": "Placeholder Stock 95",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK96.NS",
+      "name": "Placeholder Stock 96",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK97.NS",
+      "name": "Placeholder Stock 97",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK98.NS",
+      "name": "Placeholder Stock 98",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK99.NS",
+      "name": "Placeholder Stock 99",
+      "sector": "Misc",
+      "exchange": "NSE"
+    },
+    {
+      "symbol": "STOCK100.NS",
+      "name": "Placeholder Stock 100",
+      "sector": "Misc",
+      "exchange": "NSE"
+    }
+  ]
+}

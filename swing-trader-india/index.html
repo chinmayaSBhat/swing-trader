@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swing Trader India</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-..." crossorigin="anonymous">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Chart library (Chart.js example) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Swing Trader India</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pages/watchlist.html">Watchlist</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pages/signals.html">Signals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pages/settings.html">Settings</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <!-- Sidebar -->
+        <aside class="col-md-3 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    Market Overview
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        NIFTY 50
+                        <span class="badge bg-secondary"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> --</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        BANK NIFTY
+                        <span class="badge bg-secondary"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> --</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        SENSEX
+                        <span class="badge bg-secondary"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> --</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        India VIX
+                        <span class="badge bg-secondary"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> --</span>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="col-md-9">
+            <!-- top controls -->
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <button id="refreshBtn" class="btn btn-primary btn-sm">Refresh</button>
+                <small id="lastUpdated">Last update: --</small>
+            </div>
+
+            <!-- Market Overview Card (expanded) -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    Market Overview
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between">
+                                    NIFTY 50 <span id="nifty50" class="badge bg-secondary">--</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    BANK NIFTY <span id="bankNifty" class="badge bg-secondary">--</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    SENSEX <span id="sensex" class="badge bg-secondary">--</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    India VIX <span id="indiavix" class="badge bg-secondary">--</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h5 id="marketStatus">--</h5>
+                            <p id="marketCountdown" class="text-muted"></p>
+                        </div>
+                        <div class="col-md-4">
+                            <canvas id="breadthGauge" width="150" height="150"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Today's Signals and Watchlist Summary -->
+            <div class="row g-3">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            Today's Signals
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0" id="signalsTable">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Stock</th>
+                                            <th>Strategy</th>
+                                            <th>Entry</th>
+                                            <th>Stop Loss</th>
+                                            <th>Target</th>
+                                            <th>R:R</th>
+                                            <th>Confidence</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="8" class="text-center py-3">
+                                                <div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Watchlist Summary
+                        </div>
+                        <div class="card-body p-0" style="max-height: 300px; overflow-y: auto;">
+                            <table class="table mb-0" id="watchlistTable">
+                                <thead class="table-light">
+                                    <tr><th>Symbol</th><th>Price</th><th>%</th><th>Signal</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td colspan="4" class="text-center py-3"><div class="spinner-border" role="status"></div></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News and Breadth -->
+            <div class="row g-3 mt-3">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            News Feed
+                            <div class="btn-group btn-group-sm" role="group" aria-label="News filter">
+                                <button type="button" class="btn btn-outline-secondary active" data-filter="all">All</button>
+                                <button type="button" class="btn btn-outline-secondary" data-filter="watchlist">Your Watchlist</button>
+                                <button type="button" class="btn btn-outline-secondary" data-filter="market">Market</button>
+                            </div>
+                        </div>
+                        <div class="card-body" style="max-height: 300px; overflow-y: auto;" id="newsList">
+                            <ul class="list-group">
+                                <li class="list-group-item text-center py-4">
+                                    <div class="spinner-border" role="status"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <div class="card-header">Market Breadth</div>
+                        <div class="card-body">
+                            <h3 id="breadthSentiment">--</h3>
+                            <p><small>Advance/Decline Ratio</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<footer class="bg-light text-center py-3 mt-4">
+    <small>Not Financial Advice</small>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+<!-- Lightweight Charts CDN -->
+<script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+<script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
